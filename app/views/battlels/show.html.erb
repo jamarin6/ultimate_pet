@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pet1:</strong>
+  <%= @battlel.pet1 %>
+</p>
+
+<p>
+  <strong>Pet2:</strong>
+  <%= @battlel.pet2 %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @battlel.day %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @battlel.hour %>
+</p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @battlel.winner %>
+</p>
+
+<%= link_to 'Edit', edit_battlel_path(@battlel) %> |
+<%= link_to 'Back', battlels_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Battlels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pet1</th>
+      <th>Pet2</th>
+      <th>Day</th>
+      <th>Hour</th>
+      <th>Winner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @battlels.each do |battlel| %>
+      <tr>
+        <td><%= battlel.pet1 %></td>
+        <td><%= battlel.pet2 %></td>
+        <td><%= battlel.day %></td>
+        <td><%= battlel.hour %></td>
+        <td><%= battlel.winner %></td>
+        <td><%= link_to 'Show', battlel %></td>
+        <td><%= link_to 'Edit', edit_battlel_path(battlel) %></td>
+        <td><%= link_to 'Destroy', battlel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Battlel', new_battlel_path %>

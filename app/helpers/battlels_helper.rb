@@ -1,0 +1,2 @@
+module BattlelsHelper
+end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet1: MyString
+  pet2: MyString
+  day: 2016-01-14
+  hour: 2016-01-14 19:15:56
+  winner: MyString
+
+two:
+  pet1: MyString
+  pet2: MyString
+  day: 2016-01-14
+  hour: 2016-01-14 19:15:56
+  winner: MyString
