@@ -23,16 +23,36 @@ class BattlelsController < ApplicationController
 
   # POST /battlels
   # POST /battlels.json
-  def create
-    @battlel = Battlel.new(battlel_params)
+  # def create
+  #   @battlel = Battlel.new(battlel_params)
 
-    respond_to do |format|
-      if @battlel.save
-        format.html { redirect_to @battlel, notice: 'Battlel was successfully created.' }
-        format.json { render :show, status: :created, location: @battlel }
-      else
-        format.html { render :new }
-        format.json { render json: @battlel.errors, status: :unprocessable_entity }
+  #   respond_to do |format|
+  #     if @battlel.save
+  #       format.html { redirect_to @battlel, notice: 'Battlel was successfully created.' }
+  #       format.json { render :show, status: :created, location: @battlel }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @battlel.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  def create
+    my_pet1 = Pet.find_by(name: battlel_params[:pet1])
+    my_pet2 = Pet.find_by(name: battlel_params[:pet2])
+
+    if my_pet1.user_id==my_pet2.user_id
+      format.html { redirect_to root, notice: 'Battlel was not created (same owner is not possible).' }
+    else
+      @battlel = Battlel.new(battlel_params)
+      respond_to do |format|
+        if @battlel.save
+          format.html { redirect_to @battlel, notice: 'Battlel was successfully created.' }
+          format.json { render :show, status: :created, location: @battlel }
+        else
+          format.html { render :new }
+          format.json { render json: @battlel.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
