@@ -9,8 +9,8 @@
       <th>Owner</th>
       <th>Age</th>
       <th>Sex</th>
-      <th>Type</th>
-      <th>Avg wins</th>
+      <th>AnimalType</th>
+      <th>AvgWins</th>
       <th>Wins</th>
       <th>Battlels</th>
       <th>User</th>
@@ -26,9 +26,9 @@
         <td><%= pet.age %></td>
         <td><%= pet.sex %></td>
         <td><%= pet.animaltype %></td>
-        <td><%= pet.avg_wins %></td>
-        <td><%= pet.wins %></td>
-        <td><%= pet.battlels %></td>
+        <td><%= pet.battlels.to_i==0 ? 0.0 : (pet.wins.to_f/pet.battlels.to_f).to_f %></td>
+        <td><%= pet.wins.to_i %></td>
+        <td><%= pet.battlels.to_i %></td>
         <td><%= pet.user.email %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>

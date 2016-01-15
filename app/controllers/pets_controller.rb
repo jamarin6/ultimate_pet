@@ -27,6 +27,7 @@ class PetsController < ApplicationController
   def create
     # @pet = Pet.new(pet_params)
     @pet = current_user.pets.create pet_params
+    @pet.owner = current_user.name
 
     respond_to do |format|
       if @pet.save
