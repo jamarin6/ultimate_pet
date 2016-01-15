@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', '~> 1.0.0.pre2'
 # Devise for authentication
 gem 'devise'
+# authorization system
+gem 'pundit'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

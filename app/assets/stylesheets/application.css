@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+#alert{
+  background: rgb(253, 156, 156);
+  padding-left: 0.5em;
+}

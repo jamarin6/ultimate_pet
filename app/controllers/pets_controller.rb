@@ -20,6 +20,7 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    authorize @pet
   end
 
   # POST /pets
@@ -43,6 +44,7 @@ class PetsController < ApplicationController
   # PATCH/PUT /pets/1
   # PATCH/PUT /pets/1.json
   def update
+    authorize @pet
     respond_to do |format|
       if @pet.update(pet_params)
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
@@ -57,6 +59,7 @@ class PetsController < ApplicationController
   # DELETE /pets/1
   # DELETE /pets/1.json
   def destroy
+    authorize @pet
     @pet.destroy
     respond_to do |format|
       format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }

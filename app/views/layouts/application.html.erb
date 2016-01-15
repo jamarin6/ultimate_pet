@@ -8,6 +8,7 @@
 </head>
 <body>
   <%= link_to "Exit", destroy_user_session_path, method: :delete if current_user %>
+  <p>User: <%= current_user.email %>, ID: <%= current_user.id %></p>
 
   <% unless current_user %>
     <li class="active">
