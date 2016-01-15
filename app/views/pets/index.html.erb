@@ -22,14 +22,14 @@
     <% @pets.each do |pet| %>
       <tr>
         <td><%= pet.name %></td>
-        <td><%= pet.owner %></td>
+        <td><%= pet.user.email %></td>
         <td><%= pet.age %></td>
         <td><%= pet.sex %></td>
         <td><%= pet.animaltype %></td>
         <td><%= pet.battlels.to_i==0 ? 0.0 : (pet.wins.to_f/pet.battlels.to_f).to_f %></td>
         <td><%= pet.wins.to_i %></td>
         <td><%= pet.battlels.to_i %></td>
-        <td><%= pet.user.email %></td>
+        <td><%= pet.user.id %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +40,5 @@
 
 <br>
 
-<%= link_to 'New Pet', new_pet_path %>
+<%= link_to 'New Pet', new_pet_path %><br>
+<%= link_to 'Edit user', edit_user_path(current_user) %>

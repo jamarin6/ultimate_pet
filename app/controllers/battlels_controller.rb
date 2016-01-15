@@ -43,7 +43,9 @@ class BattlelsController < ApplicationController
     my_pet2 = Pet.find_by(name: battlel_params[:pet2])
 
     if my_pet1.user_id==my_pet2.user_id
-      format.html { redirect_to root, notice: 'Battlel was not created (same owner is not possible).' }
+      respond_to do |format|
+        format.html { redirect_to battlels_path, notice: 'Battlel was not created (same owner is not possible).' }
+      end
     else
       @battlel = Battlel.new(battlel_params)
       respond_to do |format|
@@ -63,6 +65,12 @@ class BattlelsController < ApplicationController
   def update
     respond_to do |format|
       if @battlel.update(battlel_params)
+        if battlel_params[:winner] # si nos llega nombre de ganador le sumamos +1 a wins del pet q se llama asi
+          petWin = Pet.find_by(name: battlel_params[:winner])
+          petLose = Pet.find_by(name: battlel_params[:loser])
+          petWin.update_attributes(wins: petWin.wins+1, battlels: petWin.battlels+1)
+          petLose.update_attributes(battlels: petLose.battlels+1)
+        end
         format.html { redirect_to @battlel, notice: 'Battlel was successfully updated.' }
         format.json { render :show, status: :ok, location: @battlel }
       else
@@ -90,6 +98,6 @@ class BattlelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def battlel_params
-      params.require(:battlel).permit(:pet1, :pet2, :day, :hour, :winner)
+      params.require(:battlel).permit(:pet1, :pet2, :date, :hour, :winner, :loser)
     end
 end

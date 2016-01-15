@@ -30,8 +30,8 @@ RSpec.describe Battlel, type: :model do
 
     # it "is invalid when pet1 and pet2 have the same owner" do
     #   @user = User.create!(name: "jose", email: "jose@example.com")
-    #   @pet1 = Pet.new(name: "chuli", owner: "jose", age: 6, sex: "Male", animaltype: "Dog", user_id: @user.id)
-    #   @pet2 = Pet.new(name: "dixie", owner: "jose", age: 22, sex: "Male", animaltype: "Dog", user_id: @user.id)
+    #   @pet1 = Pet.new(name: "chuli", owner: "jose@example.com", age: 6, sex: "Male", animaltype: "Dog", user_id: @user.id)
+    #   @pet2 = Pet.new(name: "dixie", owner: "jose@example.com", age: 22, sex: "Male", animaltype: "Dog", user_id: @user.id)
     #   @battlel = Battlel.new(pet1: @pet1, pet2: @pet2, date: "2016-01-15 09:02:27 +0100")
     #   expect(@battlel).to be_invalid
     # end
