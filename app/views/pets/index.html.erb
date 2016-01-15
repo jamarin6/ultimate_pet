@@ -25,11 +25,11 @@
         <td><%= pet.owner %></td>
         <td><%= pet.age %></td>
         <td><%= pet.sex %></td>
-        <td><%= pet.type %></td>
+        <td><%= pet.animaltype %></td>
         <td><%= pet.avg_wins %></td>
         <td><%= pet.wins %></td>
         <td><%= pet.battlels %></td>
-        <td><%= pet.user %></td>
+        <td><%= pet.user.email %></td>
         <td><%= link_to 'Show', pet %></td>
         <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
         <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
