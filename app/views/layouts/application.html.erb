@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Exit", destroy_user_session_path, method: :delete if current_user %>
-  <p>User: <%= current_user.email %>, ID: <%= current_user.id %></p>
+  <% if current_user %>
+    <%= link_to "Exit", destroy_user_session_path, method: :delete %>
+    <p>User: <%= current_user.email %>, ID: <%= current_user.id %></p>
+  <% end %>
 
   <% unless current_user %>
     <li class="active">
