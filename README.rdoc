@@ -1,4 +1,4 @@
-Ultimate Pet – Ejercicio
+#Ultimate Pet – Ejercicio
 
 Aplicación para gestionar las terribles batallas entre mascotas que hay en la oficina. El objetivo de la prueba es que se pudea coger los datos y además tener un control de la aplicación desde un panel de administración usando ActiveAdmin.
 
