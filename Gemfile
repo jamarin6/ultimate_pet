@@ -22,7 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+# activeAdmin
 gem 'activeadmin', '~> 1.0.0.pre2'
 # Devise for authentication
 gem 'devise'
