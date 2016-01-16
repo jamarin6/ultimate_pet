@@ -1,28 +1,15 @@
-== README
+Ultimate Pet – Ejercicio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicación para gestionar las terribles batallas entre mascotas que hay en la oficina. El objetivo de la prueba es que se pudea coger los datos y además tener un control de la aplicación desde un panel de administración usando ActiveAdmin.
 
-Things you may want to cover:
+Cuando se registra un nuevo miembro, la aplicación deberá enviarle un email de bienvenida.
 
-* Ruby version
+Por cada miembro guardaremos su nombre, email y los datos que estiméis necesarios para poder autenticar a dicho usuario.
 
-* System dependencies
+Cada miembro del equipo puede gestionar sus mascotas (altas, bajas y modificaciones). Un miembro del equipo puede leer los datos de las mascotas de otros miembros, pero no podrá modificar ni borrar dichos datos, por eso necesitaremos autenticar a cada miembro para garantizar la seguridad.
 
-* Configuration
+Los datos que podremos recibir de las mascotas (pets) son los siguientes: Nombre, dueño, edad, sexo, tipo (“Rat”, “Dog”, “Chinchilla”, etc..) y ratio de victorias de ese animal.
 
-* Database creation
+Además queremos poder organizar peleas entre 2 de las mascotas de la base de datos. Indicando la fecha-hora del combate, las mascotas participantes, el resultado del combate (quien ha ganado). Ninguna mascota puede estar en más de una batalla el mismo día, además, en un combate no pueden participar 2 mascotas de un mismo dueño.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Ninguna mascota será dañada en la recreación de estas batallas.
