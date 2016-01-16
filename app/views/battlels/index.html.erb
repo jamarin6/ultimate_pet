@@ -8,8 +8,8 @@
     <tr>
       <th>Pet1</th>
       <th>Pet2</th>
-      <th>Date</th>
-      <!-- <th>Hour</th> -->
+      <th>Day</th>
+      <th>Hour</th>
       <th>Winner</th>
       <th colspan="3"></th>
     </tr>
@@ -20,8 +20,8 @@
       <tr>
         <td><%= battlel.pet1 %></td>
         <td><%= battlel.pet2 %></td>
-        <td><%= battlel.date %></td>
-        <!-- <td><%#= battlel.hour %></td> -->
+        <td><%= battlel.created_at.strftime("%d-%b-%Y") %></td>
+        <td><%= battlel.date.strftime("%H:%M") %></td>
         <td><%= battlel.winner %></td>
         <td><%= link_to 'Show', battlel %></td>
         <td><%= link_to 'Edit', edit_battlel_path(battlel) %></td>
